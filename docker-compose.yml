@@ -1,0 +1,42 @@
+version: '3.3'
+
+services:
+  backendservice:
+    image: healthcheck:latest
+    container_name: healthcheck-cont
+    build:
+      context: ./healthcheck
+    ports:
+      - "8081:8080"
+    environment:
+      MYSQL_DB_URL : healthdb-cont
+    restart: always
+    depends_on:
+      - health_db
+
+  health_db:
+    image: mysql/mysql-server:latest
+    container_name: healthdb-cont
+    environment:
+      MYSQL_ROOT_PASSWORD: 'admin'
+    volumes:
+      - "./healthcheck/src/main/resources/:/docker-entrypoint-initdb.d/"
+    ports:
+      - "3307:3306"
+
+  healthweb:
+    image:  healthweb:latest
+    container_name: healthweb-cont
+    environment:
+      HEALTHCHECK_URL : healthcheck-cont
+    build:
+      context: ./healthweb
+      dockerfile: Dockerfile
+    ports:
+      - "8082:8081"
+    restart: always
+    depends_on:
+      - backendservice
+
+
+
