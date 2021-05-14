@@ -1,6 +1,7 @@
 package com.healthy.healthcheck;
 
 import com.fasterxml.jackson.core.JsonFactory;
+import com.fasterxml.jackson.databind.node.ArrayNode;
 import com.fasterxml.jackson.databind.node.JsonNodeFactory;
 import com.fasterxml.jackson.databind.node.ObjectNode;
 import com.healthy.backend.Health;
@@ -47,12 +48,17 @@ class HealthcheckController {
 
             } else {
                 List<Health> health = (List<Health>) healthRepository.findAll();
+                ArrayNode jsonArray = JsonNodeFactory.instance.arrayNode();
                 for (Health li : health){
                     ObjectNode node = JsonNodeFactory.instance.objectNode();
+                    node.put("id", li.getId());
                     node.put("name", li.getName());
                     node.put("status", li.getStatus());
-                    respNode.set(String.valueOf(li.getId()), node);
+                    jsonArray.add(node);
+
                 };
+                respNode.put("record_name", "Health Records");
+                respNode.set("items", jsonArray);
                   System.out.println(health.size());
 //                Health health = healthRepository.findDistinctById(new Long(1));
 //                node.put("name", health.getName());

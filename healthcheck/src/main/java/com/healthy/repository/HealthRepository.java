@@ -19,10 +19,7 @@ import java.util.Optional;
 @Repository
 public interface HealthRepository extends JpaRepository<Health, Long> {
 
-
     List<Health> findByName(String name);
-
-
     Health findDistinctById(Long id);
 
     @Modifying
