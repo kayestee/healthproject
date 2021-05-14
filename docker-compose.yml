@@ -1,5 +1,4 @@
 version: '3.3'
-
 services:
   backendservice:
     image: healthcheck:latest
@@ -34,6 +33,20 @@ services:
       dockerfile: Dockerfile
     ports:
       - "8082:8081"
+    restart: always
+    depends_on:
+      - backendservice
+
+  healthfront:
+    image: healthfront:latest
+    container_name: healthfront-cont
+    build:
+      context: ./healthfront
+      dockerfile: Dockerfile
+      args:
+        - HEALTHCHECK_URL=localhost:8081
+    ports:
+      - "80:80"
     restart: always
     depends_on:
       - backendservice
