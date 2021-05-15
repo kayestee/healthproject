@@ -34,13 +34,13 @@ class HealthcheckController {
         return new ResponseEntity<Object>(respNode, HttpStatus.OK);
     }
 
-    @GetMapping(value = "/patientinfo", produces = {MediaType.APPLICATION_JSON_VALUE})
-    public ResponseEntity<Object> fetchIndividualInfo(@RequestParam String format) throws Exception{
+    @GetMapping(value = "/patientinfo/{patientId}/{contactId}", produces = {MediaType.APPLICATION_JSON_VALUE})
+    public ResponseEntity<Object> fetchIndividualInfo( @PathVariable Long patientId,  @PathVariable Long contactId ) throws Exception{
         ObjectNode respNode = JsonNodeFactory.instance.objectNode();
         try{
 
             HealthService healthService = new HealthService();
-            respNode = healthService.patientService(format);
+            respNode = healthService.patientService(patientId, contactId);
 
         } catch(Exception ioe){
             System.out.println(ioe.getMessage());

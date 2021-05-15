@@ -18,12 +18,12 @@ export default class HealthDisplay extends React.Component {
                 <Card>
                     <Card.Body>
                     <Card.Title>
-                        {this.state.item.id}
+                        {this.state.item.name}
                     </Card.Title>
                     <Card.Text>
-                        {this.state.item.status}
+                        {this.state.item.sex}
                         </Card.Text>
-                        <HealthButton value={this.state.item.id} status={this.state.item.status} />
+                        <HealthButton value={this.state.item.id} status={this.state.item.status}/>
 
                     </Card.Body>
 

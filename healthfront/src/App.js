@@ -11,7 +11,7 @@ export default function App() {
   return (
     <Router>
 
-              <Container>
+              <Container fluid>
                   <Row>
                   <Col>
                   <Navbar bg="light" expand="lg">

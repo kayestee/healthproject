@@ -33,7 +33,7 @@ export default class HealthButton extends React.Component {
 
                     <Collapse in={this.state.setOpen}  ref={this.collapse} >
                         <div id="example-collapse-text">
-                            You picked item no: {this.state.id}
+                            You can view the patient info: {this.state.id}
                         </div>
                     </Collapse>
 
