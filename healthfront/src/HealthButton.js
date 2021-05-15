@@ -10,8 +10,10 @@ export default class HealthButton extends React.Component {
             setOpen : false,
             open: false,
             id: props.id,
+            status : props.status,
         };
         this.collapse = React.createRef();
+        this.colormap = {'Good': 'success', 'Ok' :'warning','Bad': 'danger'};
     }
 
     doToggle(){
@@ -25,7 +27,10 @@ export default class HealthButton extends React.Component {
             return (
                 <>
                     <Button className=".btn-flat"
-                            onClick={this.doToggle.bind(this)}  id={this.state.id}> Edit </Button>
+                            onClick={this.doToggle.bind(this)}  id={this.state.id} variant={this.colormap[this.state.status]}>
+                        {this.state.status}
+                    </Button>
+
                     <Collapse in={this.state.setOpen}  ref={this.collapse} >
                         <div id="example-collapse-text">
                             You picked item no: {this.state.id}

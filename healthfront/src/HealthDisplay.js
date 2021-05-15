@@ -15,18 +15,15 @@ export default class HealthDisplay extends React.Component {
     render() {
         return (
         <>
-
-
                 <Card>
                     <Card.Body>
                     <Card.Title>
                         {this.state.item.id}
                     </Card.Title>
                     <Card.Text>
-                        {this.state.item.name}
                         {this.state.item.status}
                         </Card.Text>
-                        <HealthButton value={this.state.item.id} id={this.state.item.id} />
+                        <HealthButton value={this.state.item.id} status={this.state.item.status} />
 
                     </Card.Body>
 
