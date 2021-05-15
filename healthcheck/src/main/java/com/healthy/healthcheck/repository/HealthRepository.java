@@ -1,8 +1,7 @@
-package com.healthy.repository;
+package com.healthy.healthcheck.repository;
 
 
-import com.healthy.backend.Health;
-import org.hibernate.annotations.Table;
+import com.healthy.healthcheck.backend.Health;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
@@ -12,20 +11,16 @@ import org.springframework.stereotype.Repository;
 
 
 import javax.transaction.Transactional;
-import java.util.List;
-import java.util.Optional;
 
-
+@Transactional
 @Repository
 public interface HealthRepository extends JpaRepository<Health, Long> {
 
-    List<Health> findByName(String name);
     Health findDistinctById(Long id);
 
     @Modifying
-    @Transactional()
-    @Query("update Health h set h.name = :name, h.status = :status where h.id = :id")
-    Integer updateById(@Param("id") Long id, @Param("name") String name, @Param("status") String status);
 
+    @Query("update Health h set h.status = :status where h.id = :id")
+    Integer updateById(@Param("id") Long id, @Param("status") String status);
 
 }

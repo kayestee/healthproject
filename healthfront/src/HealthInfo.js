@@ -19,7 +19,7 @@ export default class HealthInfo extends React.Component {
             method: 'GET',
             headers : {'Content-Type': 'application/json'},
         };
-        let fetchDomain = `http://${process.env.REACT_APP_HEALTHCHECK_URL}/healthcheck?format=`;
+        let fetchDomain = `http://${process.env.REACT_APP_HEALTHCHECK_URL}/healthcheck?format=full`;
 
         fetch(fetchDomain, reqOptions)
             .then(response => response.json())

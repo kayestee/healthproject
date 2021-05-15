@@ -1,4 +1,4 @@
-package com.healthy.backend;
+package com.healthy.healthcheck.backend;
 
 
 
@@ -6,42 +6,35 @@ import javax.persistence.*;
 
 
 @Entity
+@Table(name="health")
 public class Health {
      @Id
      @GeneratedValue(strategy = GenerationType.IDENTITY)
      @Column(name="id")
      private Long id;
-     private String name;
      private String status;
 
      protected Health(){}
 
      public Health(String name, String status){
-         this.name = name;
-         this.status = status;
+              this.status = status;
      }
 
      @Override
      public String toString(){
             return String.format("Health[id=%d, name='%s', status='%s']",
-                    id,name,status);
+                    id,status);
      }
     public Long getId() {
         return id;
     }
 
 
-    public String getName() {
-        return name;
-    }
 
     public String getStatus() {
         return status;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
 
     public void setStatus(String status) {
         this.status = status;
