@@ -10,6 +10,26 @@ export default class ListHealth extends React.Component {
         };
     }
 
+    //
+    // componentDidMount (){
+    //     const reqOptions = {
+    //         method: 'GET',
+    //         headers : {'Content-Type': 'application/json'},
+    //     };
+    //     let fetchDomain = `http://${process.env.REACT_APP_HEALTHCHECK_URL}/patientinfo/`;
+    //
+    //     fetch(fetchDomain, reqOptions)
+    //         .then(response => response.json())
+    //         .then((result) => {
+    //                 this.setState({items: result, loading: false});
+    //             },
+    //             (error) => {
+    //                 this.setState({fetchError: error, loading:false});
+    //             }
+    //         )
+    // }
+
+
     render () {
           const items = this.state.healthItems.items
           return (

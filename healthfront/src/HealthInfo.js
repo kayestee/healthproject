@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from "react";
 import './App.css'
 import ListHealth from "./ListHealth";
-import {Spinner} from "react-bootstrap";
+import {Badge, Spinner} from "react-bootstrap";
 
 export default class HealthInfo extends React.Component {
     constructor(props) {
@@ -9,7 +9,7 @@ export default class HealthInfo extends React.Component {
         this.state = {
             items : [1,2,3],
             fetchError: null,
-            loading : true
+            loading : false
         };
 
     }
@@ -43,7 +43,12 @@ export default class HealthInfo extends React.Component {
         } else {
             return (
                 <>
+                    <div>
+                        <h1>
+                            Health Records  <Badge variant="secondary">Latest</Badge>
+                        </h1>
                     <ListHealth healthItems={this.state.items}/>
+                    </div>
                 </>
             );
         }
