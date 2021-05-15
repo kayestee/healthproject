@@ -2,7 +2,6 @@
 ===================================
 
 ## Built With
-
 The project uses.
 * Java
 * Mysql

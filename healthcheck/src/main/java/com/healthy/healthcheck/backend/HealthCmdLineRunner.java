@@ -1,6 +1,6 @@
-package com.healthy.backend;
+package com.healthy.healthcheck.backend;
 
-import com.healthy.repository.HealthRepository;
+import com.healthy.healthcheck.repository.HealthRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
 
