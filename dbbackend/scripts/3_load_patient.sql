@@ -1,3 +1,4 @@
+SELECT 'Loading patient' as 'INFO';
 INSERT INTO patient VALUES (1001,'Rambo','Good','M','1964-06-02',1),
                            (1002,'Bezalel','Bad','F','1964-06-02',2),
                            (1003,'Parto','Bad','M','1959-12-03',3),
