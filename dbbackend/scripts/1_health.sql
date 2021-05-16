@@ -36,10 +36,8 @@ CREATE TABLE contactinfo (
                              country VARCHAR (255),
                              phone VARCHAR (255),
                              CONSTRAINT contact_id PRIMARY KEY (contactid),
-                             FOREIGN KEY (contactid)  REFERENCES patient(contact_id)  ON DELETE CASCADE ON UPDATE CASCADE
+                             FOREIGN KEY (contactid)  REFERENCES patient(contactid)  ON DELETE CASCADE ON UPDATE CASCADE
 )Engine=InnoDB;
-
-
 
 SELECT 'Loading health' as 'INFO';
 source load_health.dump;

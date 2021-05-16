@@ -1,3 +1,4 @@
+SELECT 'Loading patient' as 'INFO';
 INSERT INTO contactinfo VALUES (1,'Rambo','Rat','6649 N Blue Gum St','QC','CA','504-621-8927'),
                                (2,'Bezalel','Simmel','6649 N Blue Gum St','QC','CA','504-621-8927'),
                                (3,'Parto','Bamford','4 B Blue Ridge Blvd','QC','CA','810-292-9388'),
