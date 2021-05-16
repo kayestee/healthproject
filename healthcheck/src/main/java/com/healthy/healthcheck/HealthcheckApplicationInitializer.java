@@ -11,7 +11,6 @@ public class HealthcheckApplicationInitializer implements WebApplicationInitiali
 
     @Override
     public void onStartup(ServletContext servletContext) throws ServletException {
-
         servletContext.setInitParameter("spring.profiles.default","prod");
     }
 
