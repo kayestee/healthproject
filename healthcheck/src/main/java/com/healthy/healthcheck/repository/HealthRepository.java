@@ -17,9 +17,7 @@ import javax.transaction.Transactional;
 public interface HealthRepository extends JpaRepository<Health, Long> {
 
     Health findDistinctById(Long id);
-
     @Modifying
-
     @Query("update Health h set h.status = :status where h.id = :id")
     Integer updateById(@Param("id") Long id, @Param("status") String status);
 

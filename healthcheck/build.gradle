@@ -15,9 +15,6 @@ bootJar{
     enabled = true
     mainClassName = 'com.healthy.healthcheck.HealthcheckApplication'
 }
-jar { enabled= true}
-
-
 
 repositories {
     mavenCentral()
