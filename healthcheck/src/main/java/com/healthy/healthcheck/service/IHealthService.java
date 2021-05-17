@@ -6,8 +6,4 @@ public interface IHealthService {
 
     ObjectNode healthCheckService(String format) throws Exception;
 
-    ObjectNode patientService(Long patientId, Long contactId) throws Exception;
-
-
-
 }
