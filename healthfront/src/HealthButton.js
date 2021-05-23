@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React from "react";
 import Button from 'react-bootstrap/Button';
 import {Collapse} from "react-bootstrap";
 
@@ -19,7 +19,6 @@ export default class HealthButton extends React.Component {
     doToggle(){
         this.open = !this.open;
         this.setState({setOpen : this.open});
-        this.collapse.current = true;
     }
 
    render() {
@@ -30,12 +29,6 @@ export default class HealthButton extends React.Component {
                             onClick={this.doToggle.bind(this)}  id={this.state.id} variant={this.colormap[this.state.status]}>
                         {this.state.status}
                     </Button>
-
-                    <Collapse in={this.state.setOpen}  ref={this.collapse} >
-                        <div id="example-collapse-text">
-                            You can view the patient info: {this.state.id}
-                        </div>
-                    </Collapse>
 
                 </>
 

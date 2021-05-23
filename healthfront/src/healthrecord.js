@@ -1,6 +1,6 @@
 import React from "react";
-import HealthButton from "./HealthButton";
 import HealthDisplay from "./HealthDisplay";
+
 export default class HealthRecord extends React.Component {
     constructor(props) {
         super(props);
@@ -15,7 +15,7 @@ export default class HealthRecord extends React.Component {
     render() {
         return (
             <>
-                <HealthDisplay item={this.state.item} recordname={ this.state.recordname}/>
+                <HealthDisplay item={this.state.item} recordname={ this.state.item.status}/>
             </>
         );
     }

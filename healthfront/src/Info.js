@@ -6,7 +6,17 @@ export default class Info extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            items : [1,2,3,4,5,6],
+            items: {
+                "record_name": "Default Records",
+                "items": [{
+                    "id": 1001,
+                    "status": "Good",
+                    "name": "Rambo",
+                    "sex": "M",
+                    "birthdate": "1964-06-02",
+                    "contactid": 1
+                }],
+            }
         };
     }
 

@@ -1,6 +1,5 @@
-import React, {useState} from "react";
-import Button from 'react-bootstrap/Button';
-import {Accordion, Card} from "react-bootstrap";
+import React from "react";
+import {Card} from "react-bootstrap";
 import HealthButton from "./HealthButton";
 
 
