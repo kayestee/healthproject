@@ -1,5 +1,5 @@
 SELECT 'Loading patient' as 'INFO';
-INSERT INTO contactinfo VALUES (1,'Rambo','Rat','6649 N Blue Gum St','QC','CA','504-621-8927'),
+INSERT INTO healthdb.contactinfo VALUES (1,'Rambo','Rat','6649 N Blue Gum St','QC','CA','504-621-8927'),
                                (2,'Bezalel','Simmel','6649 N Blue Gum St','QC','CA','504-621-8927'),
                                (3,'Parto','Bamford','4 B Blue Ridge Blvd','QC','CA','810-292-9388'),
                                (4,'Chirstian','Koblick','8 W Cerritos Ave #54','QC','CA','856-636-8749'),
