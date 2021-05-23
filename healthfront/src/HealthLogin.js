@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from "react";
+import React from "react";
 import './App.css'
 import LoginScreen from "./LoginScreen";
 import {Spinner} from "react-bootstrap";

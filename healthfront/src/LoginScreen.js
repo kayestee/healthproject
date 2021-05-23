@@ -1,6 +1,6 @@
-import React, {useState} from "react";
+import React from "react";
 
-import {InputGroup, FormControl, Form} from "react-bootstrap";
+import {Form, InputGroup} from "react-bootstrap";
 import Button from "react-bootstrap/Button";
 
 export default class LoginScreen extends React.Component {
@@ -43,37 +43,34 @@ export default class LoginScreen extends React.Component {
     render () {
           return (
               <>
-              {/*<Form >*/}
-              {/*        <Form.Group controlId="formBasicEmail">*/}
-              {/*            <InputGroup className="mb-3">*/}
-              {/*            <InputGroup.Prepend>*/}
-              {/*                <InputGroup.Text id="basic-addon1">@UserName</InputGroup.Text>*/}
-              {/*            </InputGroup.Prepend>*/}
-              {/*            <Form.Control type="email" placeholder="Enter email" />*/}
-              {/*            </InputGroup>*/}
-              {/*            <Form.Text className="text-muted">*/}
-              {/*                We'll never share your email with anyone else.*/}
-              {/*            </Form.Text>*/}
-              {/*        </Form.Group>*/}
+              <Form >
+                      <Form.Group controlId="formBasicEmail">
+                          <InputGroup className="mb-3">
+                          <InputGroup.Prepend>
+                              <InputGroup.Text id="basic-addon1">@UserName</InputGroup.Text>
+                          </InputGroup.Prepend>
+                          <Form.Control type="email" placeholder="Enter email" />
+                          </InputGroup>
+                          <Form.Text className="text-muted">
+                              We'll never share your email with anyone else.
+                          </Form.Text>
+                      </Form.Group>
 
-              {/*        <Form.Group controlId="formBasicPassword">*/}
-              {/*            <InputGroup className="mb-3">*/}
-              {/*            <InputGroup.Prepend>*/}
-              {/*                <InputGroup.Text id="basic-addon1">@Password</InputGroup.Text>*/}
-              {/*            </InputGroup.Prepend>*/}
-              {/*            <Form.Control type="password" placeholder="Password" />*/}
-              {/*            </InputGroup>*/}
-              {/*        </Form.Group>*/}
-              {/*        <Form.Group controlId="formBasicCheckbox">*/}
-              {/*            <Form.Check type="checkbox" label="Check me out" />*/}
-              {/*        </Form.Group>*/}
-              {/*        <Button variant="primary" type="submit" onClick= { () => this.doLogin()} >*/}
-              {/*            Submit*/}
-              {/*        </Button>*/}
-              {/*    </Form>*/}
-
-
-
+                      <Form.Group controlId="formBasicPassword">
+                          <InputGroup className="mb-3">
+                          <InputGroup.Prepend>
+                              <InputGroup.Text id="basic-addon1">@Password</InputGroup.Text>
+                          </InputGroup.Prepend>
+                          <Form.Control type="password" placeholder="Password" />
+                          </InputGroup>
+                      </Form.Group>
+                      <Form.Group controlId="formBasicCheckbox">
+                          <Form.Check type="checkbox" label="Check me out" />
+                      </Form.Group>
+                      <Button variant="primary" type="submit" onClick= { () => this.doLogin()} >
+                          Submit
+                      </Button>
+                  </Form>
               </>
           )
         }
