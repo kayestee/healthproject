@@ -39,9 +39,3 @@ CREATE TABLE contactinfo (
                              FOREIGN KEY (contactid)  REFERENCES patient(contactid)  ON DELETE CASCADE ON UPDATE CASCADE
 )Engine=InnoDB;
 
-SELECT 'Loading health' as 'INFO';
-source load_health.dump;
-SELECT 'Loading patient' as 'INFO';
-source load_patient.dump;
-SELECT 'Loading patient' as 'INFO';
-source load_contactinfo.dump;
