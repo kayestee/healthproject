@@ -1,4 +1,5 @@
-INSERT INTO health VALUES (1001, 'Good'),
+SELECT 'Loading health' as 'INFO';
+INSERT INTO healthdb.health VALUES (1001, 'Good'),
 (1002,'Good'),
 (1003,'Bad'),
 (1004,'Ok'),
