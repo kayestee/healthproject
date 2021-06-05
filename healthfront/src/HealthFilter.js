@@ -6,12 +6,12 @@ import HealthRecord from "./healthrecord";
 import HealthButton from "./HealthButton";
 import {Link} from "react-router-dom";
 
+
 export default function HealthFilter () {
     const [items, setItems] = useState([])
     const [loading, setLoading] = useState(true)
     const [listening, setListening] = useState(false);
     const [status, setStatus] = useState("Ok");
-
 
     let eventsource = `http://localhost:8080/healthdata?status=Good`
 
