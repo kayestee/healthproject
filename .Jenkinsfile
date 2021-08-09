@@ -4,11 +4,6 @@ pipeline {
     stage('build') {
       steps {
         echo 'Building'
-        dir(path: 'healthfront') {
-          sh 'npm run build'
-          dir(path: '..')
-        }
-
         dir(path: 'healthcheck') {
           sh './gradlew build'
           dir(path: '../healthweb') {
