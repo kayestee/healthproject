@@ -1,0 +1,42 @@
+plugins {
+    id 'org.springframework.boot' version '2.3.2.RELEASE'
+    id 'io.spring.dependency-management' version '1.0.9.RELEASE'
+    id 'java'
+    id 'idea'
+}
+
+group = 'com.healthy'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '1.8'
+targetCompatibility='1.8'
+
+
+bootJar{
+    enabled = true
+    mainClassName = 'com.healthy.healthcheck.HealthcheckApplication'
+}
+
+repositories {
+    mavenCentral()
+}
+
+
+dependencies {
+    implementation('org.springframework.boot:spring-boot-starter-web')
+    implementation('org.springframework.boot:spring-boot-starter-data-jpa')
+    implementation('com.fasterxml.jackson.core:jackson-databind:2.11.2')
+    implementation('com.fasterxml.jackson.core:jackson-core:2.11.2')
+    implementation('com.fasterxml.jackson.core:jackson-annotations:2.11.2')
+    implementation('org.springframework.data:spring-data-jpa')
+    implementation('org.springframework:spring-jdbc')
+
+    runtime('mysql:mysql-connector-java')
+
+    testImplementation('org.springframework.boot:spring-boot-starter-test') {
+        exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
+    }
+}
+
+test {
+    useJUnitPlatform()
+}
